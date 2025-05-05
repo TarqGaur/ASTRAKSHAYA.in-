@@ -3,9 +3,10 @@ body {
     font-family: 'Rajdhani', sans-serif;
     margin: 0;
     padding: 0;
-    background: black;
     color: white;
-    flex-grow: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hero Section */
@@ -15,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle, #0d0d12, #1b1b1f);
+   
     color: white;
     padding: 0 20px;
 }
@@ -69,9 +70,9 @@ body {
     padding: 10px 0;
     text-align: center;
     font-family: 'Rajdhani', sans-serif;
-    position: relative;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: 1px;
 }
 
 .footer-content {

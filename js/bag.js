@@ -1,4 +1,1 @@
-
-document.querySelector('.cta-button').addEventListener('click', (e) => {
-    e.preventDefault(); // This would block navigation
-});
+// Empty file - removed unnecessary event listener that was blocking navigation

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ASTRAKSHAYA </title>
     <link rel="icon" href="teamImages/logo.jpg" type="image/x-icon">
 
@@ -14,28 +14,10 @@
     <link rel="stylesheet" href="css/stardust.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/earth.css">
-    <style>
-        /* Warning message style */
-        .warning-message {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ff0000;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 16px;
-            z-index: 9999;
-        }
-    </style>
+ 
 </head>
-<body style="background-color: black;">
-    <!-- Message for mobile users -->
-    <div id="mobile-warning" class="warning-message">
-        This site is designed for desktop use. Please open it on a PC or laptop to continue.
-    </div>
+<body >
+   
 
     <div class="bg-animation">
         <div id="stars"></div>
@@ -52,8 +34,12 @@
         <!-- Navbar -->
         <nav class="navbar">
             <div id="particles-js"></div>
-
             <span class="futuristic-text">ASTRAKSHAYA</span>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
             <div class="navbar-menu">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
@@ -69,8 +55,8 @@
                 <h1 class="hero-title">Sky is Just the Beginning</h1>
                 <p class="hero-subtitle">Revolutionizing space exploration with innovation, sustainability, and vision.</p>
                 <div class="cta-buttons">
-                    <a class="cta-button">∞</a>
-                    <a href="#join" class="cta-button secondary">waiting for you</a>
+                    <a href="explore.html" class="cta-button">∞</a>
+                    <a href="join.html" class="cta-button secondary">waiting for you</a>
                 </div>
             </div>
         </header>
@@ -92,25 +78,6 @@
     <script src="js/stardust.js"></script>
     <script src="js/earth.js"></script>
 
-    <!-- Mobile check script -->
-    <script>
-        // Function to check mobile or desktop
-        function checkDevice() {
-            // If device width is 768px or less, show warning
-            if (window.innerWidth <= 768) {
-                document.getElementById("mobile-warning").style.display = "block"; // Show warning message
-                document.getElementById("background-container").style.display = "none"; // Hide content
-                document.body.style.overflow = "hidden"; // Prevent scrolling
-            } else {
-                document.getElementById("mobile-warning").style.display = "none"; // Hide warning
-                document.getElementById("background-container").style.display = "block"; // Show content
-                document.body.style.overflow = "auto"; // Enable scrolling
-            }
-        }
 
-        // Run the check on page load and whenever window is resized
-        window.onload = checkDevice;
-        window.onresize = checkDevice;
-    </script>
 </body>
 </html>

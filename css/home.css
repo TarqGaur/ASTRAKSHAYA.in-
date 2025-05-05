@@ -1,22 +1,42 @@
 /* General Styles */
-body {
-    font-family: 'Rajdhani', sans-serif;
+html, body {
     margin: 0;
     padding: 0;
-    background: black;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    font-family: 'Rajdhani', sans-serif;
     color: white;
+}
+
+/* Background Container */
+#background-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 /* Hero Section */
 .hero {
+    min-height: 100vh;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle, #0d0d12, #1b1b1f);
-    color: white;
-    padding: 0 20px;
+    position: relative;
+    z-index: 1; /* Lower z-index to stay behind mobile menu */
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    z-index: 2; /* Lower z-index to stay behind mobile menu */
 }
 
 .hero-title {
@@ -88,11 +108,15 @@ body {
         height: auto;
         padding: 50px 20px;
     }
+    .hero-content {
+        width: 95%;
+        padding: 15px;
+    }
     .hero-title {
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
     }
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
     }
     .cta-button {
         font-size: 0.9rem;
@@ -110,5 +134,11 @@ body {
     .cta-button {
         font-size: 0.8rem;
         padding: 6px 12px;
+    }
+}
+
+@media (max-height: 500px) {
+    .hero-content {
+        transform: scale(0.9);
     }
 }

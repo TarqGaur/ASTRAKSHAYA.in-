@@ -5,20 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Astrakshaya</title>
     <link rel="icon" href="teamImages/logo.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/bag.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             background: #000;
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.8);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
         }
 
         #particle-container {
@@ -33,38 +56,7 @@
         .content {
             position: relative;
             z-index: 2;
-            padding: 0 5%;
-        }
-
-        nav {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 90%;
-            top: 0;
-            z-index: 3;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #4ecdc4;
+            padding: 0;
         }
 
         .hero {
@@ -81,6 +73,7 @@
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -118,7 +111,7 @@
         }
 
         .vision {
-            padding: 4rem 0;
+            padding: 4rem 0 8rem 0;
             text-align: center;
         }
 
@@ -127,6 +120,7 @@
             margin-bottom: 2rem;
             background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -141,10 +135,6 @@
             .hero h1 {
                 font-size: 3rem;
             }
-            
-            .nav-links {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -152,11 +142,18 @@
     <div id="particle-container"></div>
     
     <div class="content">
-        <nav>
-            <div class="logo">ASTRAKSHAYA</div>
-            <div class="nav-links">
+        <nav class="navbar">
+            <div id="particles-js"></div>
+            <span class="futuristic-text">ASTRAKSHAYA</span>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="navbar-menu">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
+                <a href="about.html">About Us</a>
+                <a href="explore.html">Explore</a>
                 <a href="team.html">Team</a>
                 <a href="join.html">Join Us</a>
             </div>
@@ -188,8 +185,20 @@
             <h2>Our Vision</h2>
             <p>At Astrakshaya, we envision a future where humanity's reach extends beyond Earth, making space travel accessible and sustainable. Through innovation and determination, we're building the foundation for mankind's greatest journey.</p>
         </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 ASTARAKSHYA. All Rights Reserved.</p>
+                    <p>Innovating for a Better Future in Space Exploration</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
+    <script src="js/nav.js"></script>
+    <script src="js/bag.js"></script>
+    <script src="js/stardust.js"></script>
     <script>
         // Three.js Setup
         const scene = new THREE.Scene();
